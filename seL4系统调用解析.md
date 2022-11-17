@@ -113,7 +113,7 @@ e. 以CNodeCopy为例，该syscall进入的是decodeCNodeInvocation的处理流�
 - 设置当前线程的状态为ThreadState_Restart。
 - 调用invokeCNodeInsert，在destSlot中插入newCap。
 
-***5.2 若sys不在此区间，则handleUnkownSyscall。**
+** 若sys不在此区间，则handleUnkownSyscall。**
 
 handle_syscall之后会进行一次schedule()，进行线程的调度。一般情况下，当前调度器的行为ksSchedulerAction是默认的SchedulerAction_ResumeCurrentThread，则实际不执行线程的切换；否则需要进行线程切换。
 
